@@ -9,12 +9,12 @@ body {
   background-color: #eac285;
 }
 .container {
-  width: 400px;
-  height: 400px;
+  width: 23rem;
+  height: 23rem;
   background-color: #ffffff;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 52%;
   left: 50%;
   border-radius: 8px;
   box-shadow: 0 20px 45px rgba(120, 76, 10, 0.25);
@@ -22,44 +22,44 @@ body {
 .cake {
   width: 100%;
   position: absolute;
-  bottom: 60px;
+  bottom: 3.75rem;
 }
 .bottom-layer,
 .top-layer,
 .middle-layer {
-  height: 80px;
-  width: 240px;
+  height: 5rem;
+  width: 15rem;
   position: relative;
   margin: auto;
   background-repeat: repeat;
   background-size: 100% 100%, 60px 100px;
-  background-position: 28px 0;
+  background-position: 1.75rem 0;
   background-image: linear-gradient(
-      transparent 50px,
-      #e3a953 50px,
-      #e3a953 60px,
-      transparent 60px
+      transparent 3.125rem,
+      #e3a953 3.125rem,
+      #e3a953 3.75rem,
+      transparent 3.75rem
     ),
-    radial-gradient(circle at 30px 5px, #713e16 30px, #eac284 31px);
+    radial-gradient(circle at 1.875rem 0.3125rem, #713e16 1.875rem, #eac284 1.935rem);
 }
 .middle-layer {
   transform: scale(0.85);
-  top: 72px;
+  top: 4.5rem;
   animation: rise-1 2s forwards;
 }
 @keyframes rise-1 {
   100% {
-    top: 7px;
+    top: 0.4375rem;
   }
 }
 .top-layer {
   transform: scale(0.7);
-  top: 144px;
+  top: 9rem;
   animation: rise-2 2s 2s forwards;
 }
 @keyframes rise-2 {
   100% {
-    top: 26px;
+    top: 1.625rem;
   }
 }
 
@@ -68,12 +68,12 @@ body {
   background: repeating-linear-gradient(
     45deg,
     #fd3018 0,
-    #fd3018 5px,
-    #ffa89e 5px,
-    #ffa89e 10px
+    #fd3018 0.3125rem,
+    #ffa89e 0.3125rem,
+    #ffa89e 0.625rem
   );
-  height: 45px;
-  width: 15px;
+  height: 2.8125rem;
+  width: 0.9375rem;
   position: absolute;
   margin: auto;
   left: 0;
@@ -83,19 +83,19 @@ body {
 }
 @keyframes rise-3 {
   100% {
-    bottom: 202px;
+    bottom: 12.625rem;
   }
 }
 .candle-flame {
   content: "";
   position: absolute;
-  height: 16px;
-  width: 16px;
+  height: 1rem;
+  width: 1rem;
   background-color: #ffee54;
   border-radius: 0 50% 50% 50%;
   transform: scale(0) rotate(45deg);
-  top: -33px;
-  left: 192px;
+  top: -2rem;
+  left: 11.05rem;
   animation: flame 1.5s 5s forwards;
 }
 
@@ -108,7 +108,7 @@ body {
 .smoke-box {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 20%;
+  top: 12%;
   left: 48%;
   display: none;
 }
@@ -166,18 +166,17 @@ body {
 
 /* Button */
 .confetti-box {
-  margin-top: 25px;
+  margin-top: 2rem;
 }
 .button-42 {
-  display: none;
-  animation: btn 5s linear;
+  display: inline-block;
+  top: -50rem;
   background-color: initial;
   background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
   color: #FFFFFF;
   cursor: pointer;
-
   font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
   height: 40px;
   line-height: 40px;
@@ -196,6 +195,7 @@ body {
   z-index: 9;
   border: 0;
   transition: box-shadow .2s;
+  animation: btn 5s ease-in-out forwards;
 }
 
 .button-42:hover {
@@ -204,9 +204,44 @@ body {
 
 @keyframes btn {
   0% { 
-    display: none; 
+    top: -50rem;
+  }
+  50% {
+
   }
   100% {
-    display: inline-block;
+    top: 5rem;
+  }
+}
+
+.title {
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  top: 2rem;
+  text-align: center;
+  display: none;
+  animation: letter 3s ease-in-out forwards;
+
+}
+
+.lettering {
+  font-family: monospace sans-serif;
+  font-size: clamp(3rem, 10vw, 5rem);
+  color: #fff;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+@keyframes letter {
+  0% { 
+    top: -20rem;
+  }
+  50% {
+
+  }
+  100% {
+    top: 3rem;
   }
 }
