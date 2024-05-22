@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Here is your virtual cake</title>
+
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+</head>
+<body>
+    <audio id="myAudio">
+        <source src="happy.m4a" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <div class="cake">
+          <div class="candle"></div>
+          <div class="candle-flame"></div>
+          <div class="top-layer"></div>
+          <div class="middle-layer"></div>
+          <div class="bottom-layer"></div>
+        </div>
+
+        <div class="smoke-box">
+            <div class="smoke smoke1"></div>
+            <div class="smoke smoke2"></div>
+            <div class="smoke smoke3"></div>
+            <div class="smoke smoke4"></div>
+            <div class="smoke smoke5"></div>
+        </div>
+      </div>
+      
+
+<div class="confetti-box">
+    <button class="confetti-btn button-42">Blow the Candle</button>
+</div>
+
+    <script>
+        const confettiBtn = document.querySelector(".confetti-btn");
+        var playBtn = document.querySelector(".play-btn");
+        var x = document.getElementById("myAudio"); 
+        
+        confettiBtn.addEventListener("click", () => {
+            const end = Date.now() + 60 * 1000;
+
+            const colors = ["#a864fd", "#29cdff","#78ff44","#ff718d","#fdff6a"];
+
+            (function frame() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors,
+            });
+
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors,
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+            })();
+
+            const candle = document.querySelector(".candle-flame");
+            candle.style.display = "none";
+
+            const smoke = document.querySelector(".smoke-box");
+            smoke.style.display = "block";
+        })
+        
+    </script>
+
+</body>
+</html>
